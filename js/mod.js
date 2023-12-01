@@ -13,7 +13,10 @@ let modInfo = {
 	offlineLimit: 0,  // In hours
 }
 
-let seed = JSON.parse(decodeURIComponent(escape(atob(localStorage.getItem(modInfo.id))))).seed || getSeed()
+let seed = getSeed() 
+if (JSON.parse(decodeURIComponent(escape(atob(localStorage.getItem(modInfo.id))))) != null) {
+	seed = JSON.parse(decodeURIComponent(escape(atob(localStorage.getItem(modInfo.id))))).seed
+}
 
 // Set your version in num and name
 let VERSION = {
@@ -70,8 +73,7 @@ function getPointGen() {
 }
 
 function getSeed() {
-	if (window.player !== undefined) return player.seed;
-	else return Math.round(Math.random()*1e9);
+	return Math.round(Math.random()*1e9);
 }
 
 function random(seed) {
