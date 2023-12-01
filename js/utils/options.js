@@ -14,7 +14,24 @@ function getStartOptions() {
 		forceOneTab: false,
 		oldStyle: false,
 		tooltipForcing: true,
+		brightness:200,
 	}
+}
+
+const BRIGHTNESS = ["low","medium","high"]
+
+function changeBrightness() {
+	if (options["brightness"] == 240) options["brightness"] = 200
+	else if (options["brightness"] == 200) options["brightness"] = 150
+	else if (options["brightness"] == 150) options["brightness"] = 240
+	else options["brightness"] = 150
+}
+
+function getBrightnessName() {
+	if (options["brightness"] == 240) return "high"
+	else if (options["brightness"] == 200) return "medium"
+	else if (options["brightness"] == 150) return "low"
+	return "wth"
 }
 
 function toggleOpt(name) {

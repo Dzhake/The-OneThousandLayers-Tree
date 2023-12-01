@@ -20,14 +20,12 @@ if (JSON.parse(decodeURIComponent(escape(atob(localStorage.getItem(modInfo.id)))
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.0",
-	name: "Literally nothing",
+	num: "0.1",
+	name: "Init commit",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
-	<h3>v0.0</h3><br>
-		- Added things.<br>
-		- Added stuff.`
+	<h3>v0.1</h3>`
 
 let winText = `lol you won`
 
@@ -49,9 +47,9 @@ function canGenPoints(){
 function getPointGen() {
 
 	//why is this here
-	let bgColor = 255
+	let bgColor = options["brightness"]
 	for (let i = 0; i < layersCount; i++) {
-		if (layers["p" + i].layerShown()) bgColor -= 255/layersCount
+		if (layers["p" + i].layerShown()) bgColor -= options["brightness"]/layersCount
 	}
 	document.body.style.setProperty('--background', "#" + (((Math.floor(bgColor)).toString(16))).repeat(3));
 	//anyway,
