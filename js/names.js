@@ -35,7 +35,7 @@ let nouns = [
 let layersNames = []
 
 for (let i = 0; i < layersCount;i++) {
-    layersNames[i] = adjectives[Math.min(Math.floor(random(player.seed * i * adjectives.length) * adjectives.length), adjectives.length - 1)] + " " + nouns[Math.min(Math.floor(random(player.seed * i * nouns.length) * nouns.length), nouns.length - 1)]
+    layersNames[i] = adjectives[Math.min(Math.floor(random(seed * i * adjectives.length) * adjectives.length), adjectives.length - 1)] + " " + nouns[Math.min(Math.floor(random(seed * i * nouns.length) * nouns.length), nouns.length - 1)]
 }
 
 let layersSymbols = []

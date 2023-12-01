@@ -13,6 +13,8 @@ let modInfo = {
 	offlineLimit: 0,  // In hours
 }
 
+let seed = JSON.parse(decodeURIComponent(escape(atob(localStorage.getItem(modInfo.id))))).seed || getSeed()
+
 // Set your version in num and name
 let VERSION = {
 	num: "0.0",
@@ -79,7 +81,7 @@ function random(seed) {
 
 // You can add non-layer related variables that should to into "player" and be saved here, along with default values
 function addedPlayerData() { return {
-	seed: getSeed(),
+	seed: seed,
 }}
 
 // Display extra things at the top of the page
